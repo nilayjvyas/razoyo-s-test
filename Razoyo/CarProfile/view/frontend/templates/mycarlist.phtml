@@ -1,0 +1,44 @@
+<?php  $myCarList = $block->getMyProfileCarList(); 
+
+
+?>
+
+  <h2 id="response"></h2>
+<div class="container">
+  <div class="row">
+  	 <div class="main-flex-dv">
+  	<?php 
+  	foreach($myCarList as $myCar){ ?>
+	<div class="cardata">
+  
+		<img class="image" src=<?= $myCar['image'] ?> alt="<?= $myCar['image'] ?>" width="150px" height="auto">
+		<div class="d-flex-main">
+    	<div class="car_id"> <p><strong>Car Id</strong></p> <p><?= $myCar['car_id'] ?></p> </div>
+    	<div class="year" ><p> <strong>year </strong></p> <p> <?= $myCar['year'] ?></p></div>
+    	<div class="make" ><p><strong>Make</strong></p>   <p><?= $myCar['make'] ?></p></div>
+    	<div class="model" ><p></p><strong>Model</strong></p> <p>  <?= $myCar['model'] ?></p></div>
+    	<input type="checkbox" id="car_delete" class="car_delete" name="car_delete" value="<?= $myCar['entity_id']?>">
+    	</div>
+    	 
+    </div>
+
+   <?php }?>
+   
+       </div>
+       <?php if($myCarList){ ?>
+       <div class="main-flex-dv">
+       	<button type="button" id="delete_button">Delete</button>
+       </div>
+       <?}?>
+  </div>
+</div>
+
+
+
+
+
+<script type="text/x-magento-init">
+{
+"*":{"Razoyo_CarProfile/js/cardelete": {}}
+}
+</script>

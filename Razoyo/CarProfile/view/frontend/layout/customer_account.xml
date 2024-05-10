@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+* Copyright © Magento, Inc. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+
+<body>
+<referenceBlock name="customer_account_navigation">
+<block class="Magento\Customer\Block\Account\SortLinkInterface" name="razoyo_carprofile_my_account">
+<arguments>
+<argument name="path" xsi:type="string">customercar/account/customcar</argument>
+<argument name="label" xsi:type="string">My Car</argument>
+<argument name="sortOrder" xsi:type="number">209</argument>
+</arguments>
+</block>
+
+<block class="Magento\Customer\Block\Account\SortLinkInterface" name="razoyo_carprofile_list_my_account">
+<arguments>
+<argument name="path" xsi:type="string">customercar/account/customcarlist</argument>
+<argument name="label" xsi:type="string">My Car Profile</argument>
+<argument name="sortOrder" xsi:type="number">208</argument>
+</arguments>
+</block>
+</referenceBlock>
+
+</body>
+</page>

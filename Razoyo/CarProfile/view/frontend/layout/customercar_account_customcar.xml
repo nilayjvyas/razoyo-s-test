@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+* Copyright © Magento, Inc. All rights reserved.
+* See COPYING.txt for license details.
+*/
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<head>
+
+<css src="Razoyo_CarProfile::css/carstyle.css" />
+
+</head>	
+<update handle="customer_account"/>
+<body>
+<referenceContainer name="content">
+<block class="Razoyo\CarProfile\Block\CarInfo" name="razoyo_carprofile_my_account_content" template="Razoyo_CarProfile::mycar.phtml" cacheable="false"/>
+</referenceContainer>
+</body>
+</page>

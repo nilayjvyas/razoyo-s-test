@@ -1,0 +1,178 @@
+
+		.cardata {
+		    width: calc(35% - 30px);
+		    border: 1px solid #ccc;
+		    padding: 20px;
+		    border-radius: 6px;
+		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.24);
+		    transform: translateY(-3px);
+		    box-sizing: border-box;
+		  /*  position: relative;
+		    transition: 0.8s ease-in-out;	*/	
+		}
+
+		.cardata:hover {
+		    transition: all 0.2s ease-out;
+		    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+		    top: -4px;
+		    border: 1px solid #cccccc;
+		    background-color: white;
+		}
+ 
+        .main-flex-dv {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 21px;
+            max-width: 1140px;
+            /* Limiting max width for responsiveness */
+            margin: 20px auto;
+        }
+ 
+        @media (max-width: 992px) {
+            .cardata {
+                width: calc(33.3333% - 20px);
+                /* For smaller screens, show 3 items per row */
+            }
+        }
+ 
+        @media (max-width: 768px) {
+            .cardata {
+                width: calc(50% - 20px);
+                /* For even smaller screens, show 2 items per row */
+            }
+        }
+ 
+        @media (max-width: 576px) {
+            .cardata {
+                width: 100%;
+                /* For smallest screens, show 1 item per row */
+            }
+        }
+ 
+        .d-flex-main {
+            display: flex;
+            flex-direction: column;
+            gap: 6px%;
+            margin: 10px 0px;
+        }
+ 
+        .d-flex-main strong {
+            font-weight: 700;
+            font-family: sans-serif;
+            margin: 0px;
+            font-size: 1.5rem;
+        }
+ 
+		.d-flex-main p {
+			margin: 0px;
+			font-size: 1rem;
+			font-weight: 400;
+			font-family: sans-serif;
+			display: inline-block;
+		}
+
+        .car_delete{
+            width: 20px;
+            height: 20px;
+            margin-top: 5px;
+        }
+		.d-flex-main p:last-child {
+		float: right;
+		font-size: 1.3rem;
+		font-weight: 500;
+		}
+		h2#response span {
+    font-size: 2rem;
+    font-weight: 500;
+
+
+
+       .cardata {
+        width: calc(35% - 30px);
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 6px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.24);
+        transform: translateY(-3px);
+        box-sizing: border-box;
+      /*  position: relative;
+        transition: 0.8s ease-in-out; */  
+    }
+
+    .cardata:hover {
+        transition: all 0.2s ease-out;
+        box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+        top: -4px;
+        border: 1px solid #cccccc;
+        background-color: white;
+    }
+ 
+        .main-flex-dv {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 21px;
+            max-width: 1140px;
+            /* Limiting max width for responsiveness */
+            margin: 20px auto;
+        }
+ 
+        @media (max-width: 992px) {
+            .cardata {
+                width: calc(33.3333% - 20px);
+                /* For smaller screens, show 3 items per row */
+            }
+        }
+ 
+        @media (max-width: 768px) {
+            .cardata {
+                width: calc(50% - 20px);
+                /* For even smaller screens, show 2 items per row */
+            }
+        }
+ 
+        @media (max-width: 576px) {
+            .cardata {
+                width: 100%;
+                /* For smallest screens, show 1 item per row */
+            }
+        }
+ 
+        .d-flex-main {
+            display: flex;
+            flex-direction: column;
+            gap: 6px%;
+            margin: 10px 0px;
+        }
+ 
+        .cardata.cardetail1 p strong {
+            font-weight: 700;
+            font-family: sans-serif;
+            margin: 0px;
+            font-size: 1.5rem;
+        }
+ 
+    .cardata.cardetail1 p {
+      margin: 0px;
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: sans-serif;
+      display: inline-block;
+    }
+
+        .car{
+            width: 20px;
+            height: 20px;
+            margin-top: 5px;
+        }
+    /*.d-flex-main p:last-child {
+    
+    }*/
+    .cardata.cardetail1 p:last-child {
+      float: right;
+    font-size: 1.3rem;
+    font-weight: 500;
+    }
+    h2#response span {
+    font-size: 2rem;
+    font-weight: 500;
+}
