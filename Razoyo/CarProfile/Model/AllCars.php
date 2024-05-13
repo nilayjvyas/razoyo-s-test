@@ -9,31 +9,31 @@ class AllCars
         $carApiUrl = 'https://exam.razoyo.com/api/cars';
         try
         {
-          $curl = curl_init();
-
+            $curl = curl_init();
             curl_setopt_array($curl, array(
-              CURLOPT_URL => $carApiUrl,
-              CURLOPT_RETURNTRANSFER => true,
-              CURLOPT_ENCODING => '',
-              CURLOPT_MAXREDIRS => 10,
-              CURLOPT_TIMEOUT => 0,
-              CURLOPT_FOLLOWLOCATION => true,
-              CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-              CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_URL => $carApiUrl,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+            CURLOPT_HEADER => true,
             ));
 
-            $response = curl_exec($curl);
-
-            curl_close($curl);
-                return (array)json_decode($response);
+            return $response = curl_exec($curl);
 
         }catch (\Exception $e){
                throw new NoSuchEntityException( __($e->getMessage()));
         }
     }
 
-    public function getCarDetailsById($carId)
+
+
+    public function getCarDetailsById($carId , $token)
     {
+
  
         $carDetailUrl = 'https://exam.razoyo.com/api/cars/'.$carId;
 
@@ -50,24 +50,17 @@ class AllCars
               CURLOPT_FOLLOWLOCATION => true,
               CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
               CURLOPT_CUSTOMREQUEST => 'GET',
+                CURLOPT_HTTPHEADER => array(
+                    'Authorization: Bearer ' . $token,
+                    'Content-Type: application/json'
+                ),
             ));
 
-            // $response = curl_exec($curl);
+            $response = curl_exec($curl);
+            $responseArray = json_decode($response,true);
+            curl_close($curl);
 
-            // curl_close($curl);
-
-           $response='{
-              "id": "abcdefghijklmnop",
-              "year": 2024,
-              "make": "Ford",
-              "model": "Focus",
-              "price": 11000.99,
-              "seats": 5,
-              "mpg": 30,
-              "image": "https://media.istockphoto.com/id/1468178137/photo/close-up-side-view-of-an-orange-luxury-sports-car.jpg?s=2048x2048&w=is&k=20&c=m1ih238W2fDS6IEzeRFAx_8GiiH7WA3wstGVjpTw8EQ="
-            }';
-
- return (array)json_decode($response);
+            return $responseArray;
 
         }catch (\Exception $e){
              throw new NoSuchEntityException( __($e->getMessage()));

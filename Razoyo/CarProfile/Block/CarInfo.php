@@ -26,15 +26,30 @@ class CarInfo extends \Magento\Framework\View\Element\Template
 
      public function getCarList()
     {
+        $newCarData =[];
         $carsList  = $this->allCars->getAllCarList();
-        return $carsList;
+
+        list($header, $body) = explode("\r\n\r\n", $carsList, 2);
+        preg_match('/your-token: (.*)\b/', $header, $matches);
+        if (isset($matches[1])) {
+           $token = $matches[1];
+        }
+
+        $data = json_decode($body, true);
+         if (isset($data['cars'])) {
+                $cars = $data['cars'];
+            }
+
+        $newCarData['token'] = $token;
+        $newCarData['carlist'] = $cars;
+        return $newCarData;
     }
 
 
-     public function getCarImageById($carId)
+     public function getCarImageById($carId ,$token) 
     {
-        $carsDetail  = $this->allCars->getCarDetailsById($carId);
-        return $carsDetail['image'];
+        $carsDetail  = $this->allCars->getCarDetailsById($carId , $token);
+        return $carsDetail['car']['image'];
     }
 
    public function getCustomerEmail()

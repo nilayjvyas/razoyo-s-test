@@ -1,5 +1,7 @@
 <?php 
 $allCars= $block->getCarList();
+//echo "<pre>"; print_r($allCars); die;
+$token = $allCars['token'];
 $email = $block->getCustomerEmail();
 ?>
 
@@ -8,18 +10,19 @@ $email = $block->getCustomerEmail();
   <div class="row">
   	 <div class="main-flex-dv">
   	<?php $i =1;
-  	foreach($allCars['cars'] as $car){
-			$imageUrl = $block->getCarImageById($car->id);?>
+  	foreach($allCars['carlist'] as $car){
+      $carId = $car['id'];
+			$imageUrl = $block->getCarImageById($carId ,$token);?>
 <div class= "cardata  cardetail<?= $i ?>">
    
-      <img class="image" src=<?= $imageUrl ?> alt="<?= $car->model ?>" width="150" height="auto">
+      <img class="image" src=<?= $imageUrl ?> alt="<?= $car['model'] ?>" width="250" height="auto">
       <div class="data-flex"></div>
-    	<p class="car_id">Cara id =<?= $car->id ?></p><br>
-    	<p class="year" >year  =  <?= $car->year ?></p><br>
-    	<p class="make" >make  =  <?= $car->make ?></p><br>
-    	<p class="model" >model  =  <?= $car->model ?></p><br>
+    	<p class="car_id">Cara id =<?= $car['id'] ?></p><br>
+    	<p class="year" >year  =  <?= $car['year'] ?></p><br>
+    	<p class="make" >make  =  <?= $car['make'] ?></p><br>
+    	<p class="model" >model  =  <?= $car['model'] ?></p><br>
         <p class="email" hidden >email  =  <?= $email ?></p><br>
-      <input type="checkbox" id="car" class="car" name="car" value="<?= $car->id?>">
+      <input type="checkbox" id="car" class="car" name="car" value="<?= $car['id'] ?>">
 
     </div>
 
